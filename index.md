@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/alok-ailawadi/alok-ailawad
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-This is the link [Link](https://github.com/alok-ailawadi/alok-ailawadi-github.io/master/html/firstPage.html)
+This is the link [Link](https://github.com/alok-ailawadi/alok-ailawadi-github.io/html/firstPage.html)
 
 ### Markdown
 
