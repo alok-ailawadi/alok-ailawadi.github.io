@@ -31,7 +31,7 @@ You have 9 H1 headings. You may want to use the "H1 -> H2" option to demote all 
 # Functional programming for java Developers
 
 # Table of Contents 
-`- [Introduction](#introduction) 
+- [Introduction](#introduction) 
 - [Methodology](#methodology) 
 - [Concepts](#concepts) 
   * [Language features](#language-features) 
