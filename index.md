@@ -21,3 +21,4 @@ Since java 8 effort has been made to incorporate functional programming to it. T
 That is why Java developers find it very difficult to move to functional programmig paradigm.
 
 This Article is an effort to explore and dymistify functional programming in Java in hope that it will make it easier for developers to understand why it was done that way in java.
+</details>
