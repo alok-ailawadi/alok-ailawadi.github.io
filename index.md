@@ -8,6 +8,7 @@ Java has been an object-oriented language with imperative/procedural style. When
 
 more...
 </summary>
+
 * Encapsulation
 * Message passing
 * Dynamic binding
