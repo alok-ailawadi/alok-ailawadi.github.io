@@ -6,7 +6,7 @@ Java has been an object-oriented language with imperative/procedural style. When
 <details>
 <summary>
 
-more...
+more....
 </summary>
 
 * Encapsulation
