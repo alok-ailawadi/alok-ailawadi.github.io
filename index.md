@@ -1,6 +1,9 @@
 ## Welcome
 
-[Functional programming in Java](articles/functionalProgrammingInJava.md)\
+*[Imp links for java refresh](links/java.md)*\
+Some random links to important topics you will never otherwise care to read.
+
+*[Functional programming in Java part 1](articles/functionalProgrammingInJava.md)*\
 Java has been an object-oriented language with imperative/procedural style. When Object-Oriented programming term was coined by Alan Kay in 1967, it was supposed abstract the real world problems using: 
 
 
