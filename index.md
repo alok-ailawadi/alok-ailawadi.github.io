@@ -1,6 +1,6 @@
 ## Welcome
 
-*[Imp links for java refresh](links/java.md)*\
+*[Imp links](links/java.md)*\
 Some random links to important topics you will never otherwise care to read.
 
 *[Functional programming in Java part 1](articles/functionalProgrammingInJava.md)*\
