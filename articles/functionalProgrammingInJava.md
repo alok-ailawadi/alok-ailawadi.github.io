@@ -1,7 +1,7 @@
 <!-----
 NEW: Check the "Suppress top comment" option to remove this info from the output.
 
-Conversion time: 1.683 seconds.
+Conversion time: 1.228 seconds.
 
 
 Using this Markdown file:
@@ -14,41 +14,36 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β29
-* Thu Sep 17 2020 21:25:01 GMT-0700 (PDT)
+* Sun Sep 20 2020 04:39:32 GMT-0700 (PDT)
 * Source doc: Functional Programming for Java developers
 * This is a partial selection. Check to make sure intra-doc links work.
 * Tables are currently converted to HTML tables.
-* This document has images: check for >>>>>  gd2md-html alert:  inline image link in generated source and store images to your server. NOTE: Images in exported zip file from Google Docs may not appear in  the same order as they do in your doc. Please check the images!
-
-
-WARNING:
-You have 9 H1 headings. You may want to use the "H1 -> H2" option to demote all headings by one level.
-
 ----->
 
 
-
-# Functional programming for java Developers
-
-# Table of Contents 
-- [Introduction](#introduction) 
-- [Methodology](#methodology) 
-- [Concepts](#concepts) 
-  * [Language features](#language-features) 
-- [Function Mathematical definition](#function-mathematical-definition) 
-- [Some concepts](#some-concepts) 
-  * [Function](#function) 
-  * [Side effect free](#side-effect-free) 
-  * [Immutable data](#immutable-data) 
-  * [Functions as first class citizens](#functions-as-first-class-citizens) 
-- [Higher order function](#higher-order-function) 
-- [Functions in Java](#functions-in-java) 
-- [Java function recipes](#java-function-recipes) 
-  * [Supplier&lt;T> ](#supplier&lt;t>-) 
-- [Consumer](#consumer) 
-  * [Function](#function) 
-  * [Functional Composition](#functional-composition) 
- 
+# Table of Contents \
+`- [Introduction](#introduction) \
+- [Methodology](#methodology) \
+- [Concepts](#concepts) \
+  * [Language features](#language-features) \
+- [Function Mathematical definition](#function-mathematical-definition) \
+- [Some concepts](#some-concepts) \
+  * [Function](#function) \
+  * [Side effect ](#side-effect-) \
+  * [Immutable data](#immutable-data) \
+  * [Functions as first class citizens](#functions-as-first-class-citizens) \
+  * [Higher order function](#higher-order-function) \
+- [Functions in Java](#functions-in-java) \
+- [Java function recipes](#java-function-recipes) \
+  * [Supplier ](#supplier-) \
+  * [Consumer](#consumer) \
+  * [Function](#function) \
+  * [Functional Composition](#functional-composition) \
+  * [Predicate](#predicate) \
+  * [Predicate composition ](#predicate-composition-) \
+ \
+ \
+ \
 `
 
 
@@ -59,7 +54,7 @@ You have 9 H1 headings. You may want to use the "H1 -> H2" option to demote all 
 
 
 
-# Introduction
+## Introduction
 
 If you are an experienced java developer, or you have learnt coding using Java, then learning functional programming is not natural. Because functional programming in Java is not natural.
 
@@ -68,7 +63,7 @@ Java 8 onwards have introduced many features that help you code in declarative s
 This cook book attempts to understand functional programming, how to do it in java, more importantly how to identify if the code written by you or your team member is actually functional or just an imposter.
 
 
-# Methodology
+## Methodology
 
 There are many articles teaching functional programming in java. But as I said earlier functions in java are not natural and if you dive straight to functional programming in java you will understand little.
 
@@ -85,7 +80,7 @@ So let's just begin
 
 
 
-# Concepts
+## Concepts
 
 A functional code is truly functional if **it has no side-effects**. Absence of side-effects is the only qualifying feature. What it means
 
@@ -97,7 +92,7 @@ A functional code is truly functional if **it has no side-effects**. Absence of 
 Rest all is just language features, programming techniques and advantages of functional programming
 
 
-## Language features
+### Language features
 
 To support functional programming
 
@@ -127,7 +122,7 @@ Advantages
 3. determinism
 
 
-# Function Mathematical definition
+## Function Mathematical definition
 
 In mathematical terms, a function is a **binary relation** between **two sets (input set and output set)**, where **each input **is **related** to** exactly one** **output**.
 
@@ -140,15 +135,15 @@ Where x is input set
 And y is output set
 
 
-# Some concepts
+## Some concepts
 
 
-## Function
+### Function
 
 Just like mathematical functions, takes inputs and provides  output based on the input value.
 
 
-## Side effect free
+### Side effect 
 
 If during an execution of a function, it changes the state of the environment such that calling the same function again and again with the same inputs creates different outputs, then the function/method has side effects. Consider the following code
 
@@ -184,7 +179,7 @@ public int[] functionalSum(int number){
 Not only does this look cleaner but regardless of how many times this method is called with the same int parameter, the result will always be the same as this method is not changing the state of any data which is not in the scope of the method.
 
 
-## Immutable data
+### Immutable data
 
 An immutable data is the data structure whose state can not be modified after it is created. 
 
@@ -195,7 +190,7 @@ Functional programming is side effect free, having a mutable data in a function 
 Also if the data is immutable, it cannot be shared for modification between threads and will help in safe parallel processing.
 
 
-## Functions as first class citizens
+### Functions as first class citizens
 
 In a programming language functions are first class citizens if functions can be 
 
@@ -293,12 +288,12 @@ Output:
 
 
 
-# Higher order function
+### Higher order function
 
 A higher order function is a function that takes function as an argument or returns function. We have seen that in javascript in example above.
 
 
-# Functions in Java
+## Functions in Java
 
 Java has methods. Technically one can only pass objects (class instance) or primitives in method parameters. Also, methods can return either object, primitive and void.
 
@@ -309,14 +304,14 @@ The problem is java method can have objects (instance of class or interface) and
 Java 8 came up with a concept of ‘functional interface’. A functional interface will have  exactly one abstract method(which needs to be implemented in the instance). It may have one or more default methods.
 
 
-# Java function recipes
+## Java function recipes
 
 Before we start on recipes, let's explore the java.util.function_ _package.
 
 Important interfaces are: 
 
 
-## Supplier&lt;T> 
+### Supplier 
 
 Represents supplier of results. Its functional method is_ get()_. 
 
@@ -384,7 +379,7 @@ This is an unknown shape
 
 
 
-# Consumer
+### Consumer
 
 It is a Functional interface and hence eligible for assignment target for a lambda expression or method reference.
 
@@ -442,7 +437,7 @@ Output
 
 
 
-## Function
+### Function
 
 Represents a functional interface that accepts one argument and produces a result.
 
@@ -460,7 +455,7 @@ R->type of the result of the function
 
 
 
-## Functional Composition
+### Functional Composition
 
 Functional composition is a design pattern which helps in combining two or more functions as per the requirement.
 
@@ -534,5 +529,100 @@ System.out.println(composeIt.apply(5));
 
 /***** is equivalent to ****/
 System.out.println(halfIt.compose(tripleIt).apply(5));
+```
+
+
+
+### Predicate
+
+Represents the mathematical predicate(boolean-valued function) of one argument.
+
+The functional interface abstract method is **_test(). _**
+
+
+### Predicate composition 
+
+Predicate interface provides intuitive methods, **_and()_** and **_or() _**to join two or more predicates to test multiple conditions
+
+
+```
+default Predicate<T> and(Predicate<? super T> other)
+
+default Predicate<T> or(Predicate<? super T> other)
+```
+
+
+Example 
+
+Supporting classes
+
+
+```
+enum Department{
+
+   SALES, FINANCE, TECH, MARKETING, LEGAL;
+
+}
+
+enum Designation {
+
+   MANAGER, LEAD, DIRECTOR, PRESIDENT;
+
+}
+
+class Employee{
+
+   Employee(String name, Department department, Designation designation){
+       this.name = name;
+       this.department = department;
+       this.designation = designation;
+   }
+
+   String name;
+   Department department;
+   Designation designation;
+}
+```
+
+
+Predicate example with compostion
+
+
+```
+public class PredicateExample {
+
+   static Predicate<Employee> isFinanceDepartment = emp -> emp.department==Department.FINANCE;
+   static Predicate<Employee> isSalesDepartmet = emp -> emp.department==Department.SALES;
+   static Predicate<Employee> isDirector = emp -> emp.designation==Designation.DIRECTOR;
+
+   public static void main(String[] args) {
+
+       Employee emp1 = new Employee("Ashok", Department.FINANCE, Designation.DIRECTOR);
+       Employee emp2 = new Employee("Kishor", Department.SALES, Designation.MANAGER);
+       Employee emp3 = new Employee("Shah", Department.SALES, Designation.DIRECTOR);
+
+       if(isFinanceDepartment.test(emp1)){
+           System.out.println(emp1.name + " is from sales");
+       }
+
+       if(isFinanceDepartment.test(emp2)){
+           System.out.println(emp1.name);
+       }else{
+           System.out.println("Not from finance hence not allowed entry");
+       }
+
+       /****** compostion with and *******/
+       if(isFinanceDepartment.and(isDirector).test(emp1)){
+           System.out.println(emp1.name + " is from Finance and is director");
+       }
+
+       if(isFinanceDepartment.or(isSalesDepartmet).test(emp3)){
+           System.out.println(emp3.name + " is allowed entry to conference");
+       }
+
+
+   }
+
+}
 ```
 
