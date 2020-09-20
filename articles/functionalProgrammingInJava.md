@@ -1,11 +1,6 @@
-<!-----
-NEW: Check the "Suppress top comment" option to remove this info from the output.
-
-Conversion time: 1.228 seconds.
-
 
 # Table of Contents 
-`- [Introduction](#introduction) 
+- [Introduction](#introduction) 
 - [Methodology](#methodology) 
 - [Concepts](#concepts) 
   * [Language features](#language-features) 
