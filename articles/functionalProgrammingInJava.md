@@ -4,55 +4,26 @@ NEW: Check the "Suppress top comment" option to remove this info from the output
 Conversion time: 1.228 seconds.
 
 
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β29
-* Sun Sep 20 2020 04:39:32 GMT-0700 (PDT)
-* Source doc: Functional Programming for Java developers
-* This is a partial selection. Check to make sure intra-doc links work.
-* Tables are currently converted to HTML tables.
------>
-
-
-# Table of Contents \
-`- [Introduction](#introduction) \
-- [Methodology](#methodology) \
-- [Concepts](#concepts) \
-  * [Language features](#language-features) \
-- [Function Mathematical definition](#function-mathematical-definition) \
-- [Some concepts](#some-concepts) \
-  * [Function](#function) \
-  * [Side effect ](#side-effect-) \
-  * [Immutable data](#immutable-data) \
-  * [Functions as first class citizens](#functions-as-first-class-citizens) \
-  * [Higher order function](#higher-order-function) \
-- [Functions in Java](#functions-in-java) \
-- [Java function recipes](#java-function-recipes) \
-  * [Supplier ](#supplier-) \
-  * [Consumer](#consumer) \
-  * [Function](#function) \
-  * [Functional Composition](#functional-composition) \
-  * [Predicate](#predicate) \
-  * [Predicate composition ](#predicate-composition-) \
- \
- \
- \
-`
-
-
-```
-
-
-```
-
-
+# Table of Contents 
+`- [Introduction](#introduction) 
+- [Methodology](#methodology) 
+- [Concepts](#concepts) 
+  * [Language features](#language-features) 
+- [Function Mathematical definition](#function-mathematical-definition) 
+- [Some concepts](#some-concepts) 
+  * [Function](#function) 
+  * [Side effect ](#side-effect-) 
+  * [Immutable data](#immutable-data) 
+  * [Functions as first class citizens](#functions-as-first-class-citizens) 
+  * [Higher order function](#higher-order-function) 
+- [Functions in Java](#functions-in-java) 
+- [Java function recipes](#java-function-recipes) 
+  * [Supplier ](#supplier-) 
+  * [Consumer](#consumer) 
+  * [Function](#function) 
+  * [Functional Composition](#functional-composition) 
+  * [Predicate](#predicate) 
+  * [Predicate composition ](#predicate-composition-) 
 
 ## Introduction
 
@@ -103,9 +74,6 @@ To support functional programming
 3. Tail call optimisation 
 
 Programming techniques
-
-
-
 1. Map
 2. Reduce
 3. Pipelining
@@ -114,9 +82,6 @@ Programming techniques
 6. Higher order functions
 
 Advantages
-
-
-
 1. Parallelization
 2. Lazy evaluation
 3. determinism
@@ -128,10 +93,8 @@ In mathematical terms, a function is a **binary relation** between **two sets (i
 
 It is denoted as:
 
-f(x) = y
-
+*__f(x) = y__*
 Where x is input set
-
 And y is output set
 
 
@@ -150,7 +113,7 @@ If during an execution of a function, it changes the state of the environment su
 Example with side effect
 
 
-```
+```java
 {
 
     int[] arr = new int[] {2, 4, 8};
@@ -169,7 +132,7 @@ In example above, clearly calling the same method `nonFunctionalSum` multiple ti
 Now consider the same functionality in side effect free using java 8 streams
 
 
-```
+```java
 public int[] functionalSum(int number){
    	 return Arrays.stream(arr).map(i->i + number).toArray();
     }
@@ -180,13 +143,10 @@ Not only does this look cleaner but regardless of how many times this method is 
 
 
 ### Immutable data
-
 An immutable data is the data structure whose state can not be modified after it is created. 
 
-Why is it important?
-
+*__Why is it important?__*
 Functional programming is side effect free, having a mutable data in a function introduces potential side effects as we have seen above. 
-
 Also if the data is immutable, it cannot be shared for modification between threads and will help in safe parallel processing.
 
 
@@ -196,88 +156,69 @@ In a programming language functions are first class citizens if functions can be
 
 
 
-*   **Stored** in variable, object or array
-*   Passed as an **argument** to a function.
-*   Returned as a **return value** from a function
+*   ***Stored*** in variable, object or array
+*   Passed as an ***argument*** to a function.
+*   Returned as a ***return value*** from a function
 
-Javascript treats functions as first class citizens.
-
+*Javascript* treats functions as first class citizens.
 Following example in javascript describes all three properties of functions.
 
-Function stored on variable
-
-
-```
+__Function stored in a variable__
+```javascript
 function sum(num1, num2)
 {
    return num1 + num2;
 }
-
 let fn = sum; // Assigned to a variable
-
 console.log(fn(2,4));
 ```
 
 
-Function stored in an object
+**Function stored in an object**
 
 
-```
+```javascript
 function sum(num1, num2)
 {
    return num1 + num2;
 }
-
 let obj = {additionResult:sum}; //function on object
-
 console.log(obj.additionResult(2,4));
 ```
 
+**Function as return value**
 
-Function as return value
-
-
-```
+```javascript
 function abc(){
    var num1 = 2;
    var num2 = 4;
    function add() {
        return num1 + num2;
    };
-
    return add; // returning function as
 }
-
 let callabc = abc(); //callabc now has reference to add()
-
 console.log(callabc());
 ```
 
-
-Incidentally, in this example we are also seeing an example of closure.
-
+Incidentally, in this example we are also seeing an example of ***closure***.
 For more information on lexical scope and closures see this excellent [article](https://maximdenisov.gitbooks.io/you-don-t-know-js/content/scope_&_closures/intro.html).
 
-Function as argument in a functions
+**Function as argument in a functions**
 
-
-```
+```javascript
 function abc(){
    var num1 = 2;
    var num2 = 4;
    function add() {
        return num1 + num2;
    };
-
    return add; // returning function as
 }
-
 //function as parameter
 function xyz(fn) {
    console.log(fn());
 }
-
-
 xyz(callabc);
 xyz(abc);
 
@@ -310,22 +251,18 @@ Before we start on recipes, let's explore the java.util.function_ _package.
 
 Important interfaces are: 
 
-
 ### Supplier 
 
-Represents supplier of results. Its functional method is_ get()_. 
-
+Represents supplier of results. Its functional method is _**get()**_. 
 It accepts no argument and supplies object of type T.
-
 One of the primary usage of Supplier is **_deferred execution. _**
 
-Consider this example
+**Consider this example**
 
 
-```
+```java
 Supplier<LocalDate> dateSupplier = LocalDate::now;
 LocalDate currentDate = LocalDate.now();
-
 LocalDate currentDate2 = dateSupplier.get();
 ```
 
@@ -334,10 +271,10 @@ Other prominent use of Supplier is to refine the factory pattern. The traditiona
 
 With Java 8 implementation using suppliers, we can directly add a new type with its supplier in the factory dynamically. 
 
-Java 8 factory 
+**Java 8 factory**
 
 
-```
+```java
 public class ShapeFactory {
    private static Map<String , Supplier<? extends Shape>> shapes = new HashMap<>();
    static {
@@ -354,7 +291,6 @@ public class ShapeFactory {
     *  Factory get method using supplier instead of traditional if then else construct used earlier
     */
    public static Shape getShape(String shapeType){
-
         Optional<Supplier<? extends Shape>> opt =Optional.ofNullable(shapes.get(shapeType));
         if(opt.isPresent()){
             return opt.get().get();
@@ -367,7 +303,6 @@ public class ShapeFactory {
        System.out.println(ShapeFactory.getShape("CIRCLE").getDescription());
        /*messy ball of mud  is not in the list of know shapes */
        System.out.println(ShapeFactory.getShape("BALL-OF-MUD").getDescription());
-
    }
 }
 
@@ -382,34 +317,33 @@ This is an unknown shape
 ### Consumer
 
 It is a Functional interface and hence eligible for assignment target for a lambda expression or method reference.
-
 Represents an operation that accepts a single argument and produces no result.
 
-The consumer’s operation generally have side-effect e.g. changing state while persisting in DB or an API call 
+*The consumer’s operation generally have side-effect e.g. changing state while persisting in DB or an API call*
 
 Its functional method is **_accept(T t)._**
 
 Example
 
 
-```
+```java
 Consumer<String> = s->System.out.println(s); //Consumer that accepts a String object
 s.accept("hello world"); // prints hello world
 ```
 
 
-**_ _**An interesting case is composition of consumers using the default method **_andThen()_**
+An interesting case is composition of consumers using the default method **_andThen()_**
 
 
-```
+```java
 default Consumer<T> andThen(Consumer<? super T> after)
 ```
 
 
-Example
+**Example**
 
 
-```
+```java
 /*
     This method now has side-effect as it changes the list
 */
@@ -420,18 +354,14 @@ public static Consumer<List<String>> normalizeNames = list -> {
                + list.get(i).substring(1,list.get(i).length()).toLowerCase());
    }
 };
-
 public static Consumer<List<String>> print = s-> System.out.println(s);
 
-
 public static void main(String[] args) {
-
    List<String> names = Arrays.asList("ashok", "Kishore", "NAKUL", "moHit");
-
    normalizeNames.andThen(print).accept(names);
 }
 
-Output
+Output:
 [Ashok, Kishore, Nakul, Mohit]
 ```
 
@@ -446,9 +376,8 @@ Its abstract method name is **_apply(). _**
 The Interface is defined as 
 
 
-```
+```java
 Interface Function<T,R>
-
 T-> type of input to the function
 R->type of the result of the function
 ```
@@ -461,18 +390,15 @@ Functional composition is a design pattern which helps in combining two or more 
 
 There are two methods provided for the purpose
 
-
-```
+```java
 default <V> Function<T, V> andThen(Function< ?  super R, ? extends V> after)
 ```
 
 
-Returns the composed function that first applies _this _function (i.e. Function&lt;T,R>) and then applies the _after _function (that is why the after function’s input type is &lt;? super R>) 
+Returns the composed function that first applies __this__ function (i.e. Function&lt;T,R>) and then applies the __after__function (that is why the after function’s input type is &lt;? super R>) 
 
 V-> the return type of the composed function 
-
 R-> the return type of the _this _function.
-
 T-> the input type of _this_ function. 
 
 
@@ -480,7 +406,7 @@ T-> the input type of _this_ function.
 Example 
 
 
-```
+```java
 public class FunctionExample {
 
    static Function<Integer, Double> halfIt = value -> value / 2.0;
@@ -506,22 +432,22 @@ public class FunctionExample {
 ```
 
 
-The other method is _compose()._
+The other method is _compose()_.
 
 
-```
+```java
 default <V> Function<V, R> compose(Function<? super V, ? extends V> before)
 ```
 
 
-Returns a composed function that first applies _before _function to its input and then the _this_ function to the result.
+Returns a composed function that first applies __before__function to its input and then the __this__ function to the result.
 
 This is the reason biFunction can not have compose method because result of before will have one output and biFunction expects two inputs.
 
 Continuing with above example
 
 
-```
+```java
 static Function<Integer, Double> composeIt = halfIt.compose(tripleIt);
 
 /***** is equivalent to ****/
@@ -542,22 +468,22 @@ The functional interface abstract method is **_test(). _**
 
 ### Predicate composition 
 
-Predicate interface provides intuitive methods, **_and()_** and **_or() _**to join two or more predicates to test multiple conditions
+Predicate interface provides intuitive methods, **_and()_** and **_or()_** to join two or more predicates to test multiple conditions
 
 
-```
+```java
 default Predicate<T> and(Predicate<? super T> other)
 
 default Predicate<T> or(Predicate<? super T> other)
 ```
 
 
-Example 
+**Example**
 
-Supporting classes
+**Supporting classes**
 
 
-```
+```java
 enum Department{
 
    SALES, FINANCE, TECH, MARKETING, LEGAL;
@@ -585,10 +511,10 @@ class Employee{
 ```
 
 
-Predicate example with compostion
+**Predicate example with compostion**
 
 
-```
+```java
 public class PredicateExample {
 
    static Predicate<Employee> isFinanceDepartment = emp -> emp.department==Department.FINANCE;
@@ -615,14 +541,11 @@ public class PredicateExample {
        if(isFinanceDepartment.and(isDirector).test(emp1)){
            System.out.println(emp1.name + " is from Finance and is director");
        }
-
+         /****** compostion with or *******/
        if(isFinanceDepartment.or(isSalesDepartmet).test(emp3)){
            System.out.println(emp3.name + " is allowed entry to conference");
        }
-
-
    }
-
 }
 ```
 
