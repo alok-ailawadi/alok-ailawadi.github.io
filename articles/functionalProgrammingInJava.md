@@ -13,12 +13,12 @@
   * [Higher order function](#higher-order-function) 
 - [Functions in Java](#functions-in-java) 
 - [Java function recipes](#java-function-recipes) 
-  * [Supplier ](#supplier-) 
+  * [Supplier ](#supplier) 
   * [Consumer](#consumer) 
   * [Function](#function) 
   * [Functional Composition](#functional-composition) 
   * [Predicate](#predicate) 
-  * [Predicate composition ](#predicate-composition-) 
+  * [Predicate composition ](#predicate-composition) 
 
 ## Introduction
 
