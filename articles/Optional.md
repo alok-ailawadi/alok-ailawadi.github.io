@@ -161,7 +161,7 @@ mayBeMilk.flatMap(m->m.mayBevitD)
                 .ifPresent(cheese -> System.out.println("Drink it please"));
 ``` 
 
-##Summary
+## Summary
  Optional serves two puposes
  1. As you see from the examples above , Optional takes *NullPointerException* out of equation. It also forces the 
  programmer to make provisions for *absence of value*.
