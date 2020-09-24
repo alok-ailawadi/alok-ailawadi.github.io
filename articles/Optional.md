@@ -2,10 +2,10 @@
   * [What is Optional](#what-is-optional)
   * [Optional Creation](#optional-creation)
   * [Optional methods](#optional-methods)
-    + [ifPresent()](#ifpresent--)
-    + [isPresent()](#ispresent--)
-    + [orElse()](#orelse--)
-    + [orElseGet()](#orelseget--)
+    + [ifPresent()](#ifpresent)
+    + [isPresent()](#ispresent)
+    + [orElse()](#orelse)
+    + [orElseGet()](#orelseget)
     + [filter](#filter)
     + [map](#map)
     + [flatMap](#flatmap)
@@ -65,7 +65,7 @@ Optional<Milk> mayBeMilk = Optional.ofNullable(null);
 ```
 
 ## Optional methods
-### ifPresent()
+### ifPresent
 Do something with milk object if Optional is present
 ```java
 mayBeMilk.ifPresent(milk->System.out.println("drink" + milk.milkType));
@@ -75,7 +75,7 @@ method signature
 void ifPresent(Comsumer<? super T> consumer)
 ```
 
-### isPresent()
+### isPresent
 Check if the Optional is not empty
 ```java
 if(mayBeMilk.isPresent()){
@@ -86,7 +86,7 @@ method signature
 ```java
 boolean isPresent()
 ```
-### orElse()
+### orElse
 Return Optional value or default value if the optional is empty
 In this example if there is no milk , get skimmed milk
 ```java
@@ -96,7 +96,7 @@ Method Signature
 ```java
 T orElse(T other)
 ```
-### orElseGet()
+### orElseGet
 Same as above but now instead of creating a new instance of object, get it from a *Supplier* (e.g. factory implementation using supplier)
 ```java
 Supplier<Milk> milkman = ()->Milk(MilkType.SKIMMED);
