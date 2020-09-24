@@ -52,7 +52,8 @@ Optional<Milk> mayBeMilk = Optional.ofNullable(null);
 ```
 
 ## Optional methods
-A. Do something with milk object if Optional is present
+### ifPresent()
+Do something with milk object if Optional is present
 ```java
 mayBeMilk.ifPresent(milk->System.out.println("drink" + milk.milkType));
 ```
@@ -61,7 +62,8 @@ method signature
 void ifPresent(Comsumer<? super T> consumer)
 ```
 
-B. Check if the Optional is not empty
+### isPresent()
+Check if the Optional is not empty
 ```java
 if(mayBeMilk.isPresent()){
     //do Something 
@@ -71,8 +73,8 @@ method signature
 ```java
 boolean isPresent()
 ```
-
-C. Return Optional value or default value if the optional is empty
+### orElse()
+Return Optional value or default value if the optional is empty
 In this example if there is no milk , get skimmed milk
 ```java
 Milk orderedMilkForDrinkning = mayBeMilk.orElse(new Milk(MilkType.SKIMMED));
@@ -81,8 +83,8 @@ Method Signature
 ```java
 T orElse(T other)
 ```
-
-D. Same as above but now instead of creating a new instance of object, get it from a *Supplier* (e.g. factory implementation using supplier)
+### orElseGet()
+Same as above but now instead of creating a new instance of object, get it from a *Supplier* (e.g. factory implementation using supplier)
 ```java
 Supplier<Milk> milkman = ()->Milk(MilkType.SKIMMED);
 
@@ -98,7 +100,7 @@ This has an important performance impact.
 If you know Java streams, you know *filter()*, *map()* and *flatmap()* . Optionl has same method with 
 roughly similar meaning for these methods.
 
-###filter
+### filter
 ```java
 Optional<T> filter(Predicate<? super T> predicate)
 ```
@@ -109,7 +111,7 @@ mayBeMilk.filter(milk->milk.milkType==MilkType.SOY)
 ```
 In the code above the filter will be applied only if the mayBeMilk Optional is not empty.
 
-###map
+### map
 ```java
 <U>Optional<U> map(Function<? super T, ? extends U> other)
 ```
@@ -125,7 +127,7 @@ mayBeMilk.map(m->MilkProcessor.getCheese(m))
                 .ifPresent(cheese -> System.out.println("Eat it please"));
 ```
 
-###flatMap
+### flatMap
 ```java
 <U>Optional <U> flatmap(<? super T , Optional<U>> mapper)
 ```
