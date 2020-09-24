@@ -20,3 +20,5 @@ That is why Java developers find it very difficult to move to functional program
 
 This Article is an effort to explore and dymistify functional programming in Java in hope that it will make it easier for developers to understand why it was done that way in java.
 
+*[Functional programming part 2 - writing readable code with Optional](articles/Optional.md)*\
+How to write code which is more readable. Also get rid of that dreaded ***NullPointerException*** using ***Optional*** class.
