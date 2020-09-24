@@ -2,10 +2,10 @@
   * [What is Optional](#what-is-optional)
   * [Optional Creation](#optional-creation)
   * [Optional methods](#optional-methods)
-    + [ifPresent()](#ifpresent)
-    + [isPresent()](#ispresent)
-    + [orElse()](#orelse)
-    + [orElseGet()](#orelseget)
+    + [ifPresent](#ifpresent)
+    + [isPresent](#ispresent)
+    + [orElse](#orelse)
+    + [orElseGet](#orelseget)
     + [filter](#filter)
     + [map](#map)
     + [flatMap](#flatmap)
@@ -175,7 +175,7 @@ mayBeMilk.flatMap(m->m.mayBevitD)
 ``` 
 
 ## Summary
- Optional serves two puposes
- 1. As you see from the examples above , Optional takes *NullPointerException* out of equation. It also forces the 
+ Optional serves two purposes
+ 1. As you see from the examples above, Optional takes *NullPointerException* out of the equation. It also forces the 
  programmer to make provisions for *absence of value*.
  2. The code is more readable. Much better than code blocks of *if(milk!=null)* 
