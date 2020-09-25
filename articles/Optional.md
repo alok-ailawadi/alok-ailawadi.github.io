@@ -1,4 +1,7 @@
-- [Java Optional and its best practices](#java-optional-and-its-best-practices)
+
+
+
+# Java Optional and its best practices
   * [What is Optional](#what-is-optional)
   * [Optional Creation](#optional-creation)
   * [Optional methods](#optional-methods)
@@ -10,8 +13,6 @@
     + [map](#map)
     + [flatMap](#flatmap)
   * [Summary](#summary)
-
-# Java Optional and its best practices
 
 **Tony Hoare** introduced '***null references***' in 1964 in ALGOL. And in 2009 apologised for it calling it 
 ***billion dollar mistake***. 
