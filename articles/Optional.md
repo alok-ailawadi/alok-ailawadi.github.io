@@ -1,4 +1,18 @@
+
+
+
 # Java Optional and its best practices
+  * [What is Optional](#what-is-optional)
+  * [Optional Creation](#optional-creation)
+  * [Optional methods](#optional-methods)
+    + [ifPresent](#ifpresent)
+    + [isPresent](#ispresent)
+    + [orElse](#orelse)
+    + [orElseGet](#orelseget)
+    + [filter](#filter)
+    + [map](#map)
+    + [flatMap](#flatmap)
+  * [Summary](#summary)
 
 **Tony Hoare** introduced '***null references***' in 1964 in ALGOL. And in 2009 apologised for it calling it 
 ***billion dollar mistake***. 
@@ -9,7 +23,7 @@ For more than 50 years softwares are failing in production because of *null refe
 
 An attempt was made to get over it in java8 by introducing ***Optional***. 
 
-##What is Optional
+## What is Optional
 
 Optional is a container.\
 It contains object of a defined type.\
@@ -52,7 +66,8 @@ Optional<Milk> mayBeMilk = Optional.ofNullable(null);
 ```
 
 ## Optional methods
-A. Do something with milk object if Optional is present
+### ifPresent
+Do something with milk object if Optional is present
 ```java
 mayBeMilk.ifPresent(milk->System.out.println("drink" + milk.milkType));
 ```
@@ -61,7 +76,8 @@ method signature
 void ifPresent(Comsumer<? super T> consumer)
 ```
 
-B. Check if the Optional is not empty
+### isPresent
+Check if the Optional is not empty
 ```java
 if(mayBeMilk.isPresent()){
     //do Something 
@@ -71,8 +87,8 @@ method signature
 ```java
 boolean isPresent()
 ```
-
-C. Return Optional value or default value if the optional is empty
+### orElse
+Return Optional value or default value if the optional is empty
 In this example if there is no milk , get skimmed milk
 ```java
 Milk orderedMilkForDrinkning = mayBeMilk.orElse(new Milk(MilkType.SKIMMED));
@@ -81,8 +97,8 @@ Method Signature
 ```java
 T orElse(T other)
 ```
-
-D. Same as above but now instead of creating a new instance of object, get it from a *Supplier* (e.g. factory implementation using supplier)
+### orElseGet
+Same as above but now instead of creating a new instance of object, get it from a *Supplier* (e.g. factory implementation using supplier)
 ```java
 Supplier<Milk> milkman = ()->Milk(MilkType.SKIMMED);
 
@@ -98,7 +114,7 @@ This has an important performance impact.
 If you know Java streams, you know *filter()*, *map()* and *flatmap()* . Optionl has same method with 
 roughly similar meaning for these methods.
 
-###filter
+### filter
 ```java
 Optional<T> filter(Predicate<? super T> predicate)
 ```
@@ -109,7 +125,7 @@ mayBeMilk.filter(milk->milk.milkType==MilkType.SOY)
 ```
 In the code above the filter will be applied only if the mayBeMilk Optional is not empty.
 
-###map
+### map
 ```java
 <U>Optional<U> map(Function<? super T, ? extends U> other)
 ```
@@ -125,7 +141,7 @@ mayBeMilk.map(m->MilkProcessor.getCheese(m))
                 .ifPresent(cheese -> System.out.println("Eat it please"));
 ```
 
-###flatMap
+### flatMap
 ```java
 <U>Optional <U> flatmap(<? super T , Optional<U>> mapper)
 ```
@@ -159,8 +175,8 @@ mayBeMilk.flatMap(m->m.mayBevitD)
                 .ifPresent(cheese -> System.out.println("Drink it please"));
 ``` 
 
-##Summary
- Optional serves two puposes
- 1. As you see from the examples above , Optional takes *NullPointerException* out of equation. It also forces the 
+## Summary
+ Optional serves two purposes
+ 1. As you see from the examples above, Optional takes *NullPointerException* out of the equation. It also forces the 
  programmer to make provisions for *absence of value*.
  2. The code is more readable. Much better than code blocks of *if(milk!=null)* 

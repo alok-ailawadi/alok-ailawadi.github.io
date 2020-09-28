@@ -4,19 +4,13 @@
 Some random links to important topics you will never otherwise care to read.
 
 *[Functional programming in Java part 1](articles/functionalProgrammingInJava.md)*\
-Java has been an object-oriented language with imperative/procedural style. When Object-Oriented programming term was coined by Alan Kay in 1967, it was supposed abstract the real world problems using: 
-
-
-* Encapsulation
-* Message passing
-* Dynamic binding
-
-Overtime many more features were added like *inheritence, polymorphism* etc. In 90s and early 2000s OOP was the way to solve all problems. 
-Gradually, there was a realisation that this is not enough, the very features that were strengths of OOP were proving to be hinderence. 
-Hence came the *Functional programming paradigm*. And it gained in popularity.
+Java has been an object-oriented language with imperative/procedural style.
+But for last some years Functional programming is gaining traction and very strengths of OOPs are considered weaknesses.
 
 Since java 8 effort has been made to incorporate functional programming to it. This is not straight forward. Because it requires changing the structure of java while maintaining backward compatibility.
 That is why Java developers find it very difficult to move to functional programmig paradigm.
 
 This Article is an effort to explore and dymistify functional programming in Java in hope that it will make it easier for developers to understand why it was done that way in java.
 
+*[Functional programming part 2 - writing readable code with Optional](articles/Optional.md)*\
+How to write code which is more readable. Also get rid of that dreaded ***NullPointerException*** using ***Optional*** class.
