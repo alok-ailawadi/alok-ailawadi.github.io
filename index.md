@@ -4,8 +4,9 @@
 Some random links to important topics you will never otherwise care to read.
 
 ### [Functional Programming in Java - 3: Optional best practices](articles/OptionalBestPractice.md)
+This article describes some of the best practices for using Optional. Should be read after [part 2](articles/Optional.md).
 
-### [Functional programming part - 2:  writing readable code with Optional](articles/Optional.md)
+### [Functional programming in Java - 2:  writing readable code with Optional](articles/Optional.md)
 How to write code which is more readable. Also get rid of that dreaded ***NullPointerException*** using ***Optional*** class.
 
 ### [Functional programming in Java - 1](articles/functionalProgrammingInJava.md)
