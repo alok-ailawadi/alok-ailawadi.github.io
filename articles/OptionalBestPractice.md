@@ -6,6 +6,7 @@ This article attempts to give a few of the best practices of using the Optional.
 
 ## Practice 1: Assignment
 Do not assign null to an optional instance. Optional is a _container_ which _contains_ an instance of a class which may be _absent_. The optional itself should not be null
+
 ```java
 public Optional<milk> getMilk(Milktype milktype){
 //logic for gtting milk
@@ -21,7 +22,7 @@ Correct code is to assign Optional.empty()
 ```java
 Optional<milk> maybeMilk = Otional.empty(); // correct way
 return maybeMilk;
-```</milk>
+```
 
 ## Practice 2: correctly use _get()_
 Don't use Optional.get() before ensuring that Optional does indeed have value. So:\
