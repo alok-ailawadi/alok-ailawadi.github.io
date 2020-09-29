@@ -67,7 +67,7 @@ It is always advisable to use _orElseGet()_.
 ## Practice 4: Do not declare class fields as Optional
 Optional is not serializable. Optional is not intended to be used as the property of a java bean or as a persistent type property.
 
-So. **Don't use Optional as: **
+So. **Don't use Optional as:**
 
 1. Field/property of a class.
 2. Argument to the constructor.
