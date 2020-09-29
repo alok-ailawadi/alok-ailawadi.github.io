@@ -15,7 +15,7 @@ Optional<milk> maybeMilk = null;
 return maybeMilk;
 }
 ```
-The above code is incorrect.</milk></milk>
+The above code is incorrect.
 
 Correct code is to assign Optional.empty()
 
