@@ -1,4 +1,4 @@
-#Java stream - Simplified part 1 .
+# Java stream - Simplified part 1 .
 
 Some important points about Java streams
 
@@ -14,7 +14,7 @@ Some important points about Java streams
 7. Streams are ***lazy*** computation of source data is only performed when the the terminal operation is initiated.
 8. The source elements are comsumef only as needed.
 
-#Stream Vs Collection
+# Stream Vs Collection
 They both look similar but have different goals.
 
 Collections- are primmarily concerned about *efficient management* and *access* to the elements in a collection.
@@ -24,7 +24,7 @@ Streams- deal with *source*
 2. It is all about *declaratively* describing the source and computational operations that will be performed in aggregate on that source.
 3. A stream pipeline can be viewed as a *query* on the stream source.
 
-#Stream operations 
+# Stream operations 
 Most stream operations accept parameters that *describe user-defined **behaviour***.
 The parameter to stream operation must be :
 - non-interfering (should not change the source elements)

@@ -4,7 +4,7 @@
 Some random links to important topics you will never otherwise care to read.
 
 
-###[Java Streams - Simplified](articles/JavaStream1.md)  
+### [Java Streams - Simplified](articles/JavaStream1.md)  
 The points you always miss when learning Java streams from tutorials.
 
 ### [Functional Programming in Java - 3: Optional best practices](articles/OptionalBestPractice.md)
