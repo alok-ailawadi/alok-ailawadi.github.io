@@ -3,6 +3,9 @@
 *[Imp links](links/java.md)*\
 Some random links to important topics you will never otherwise care to read.
 
+*[Java Streams - Simplified](article/JavaStream1.md)*  
+The points you always miss when learning Java streams from tutorials.
+
 *[Functional programming in Java part 1](articles/functionalProgrammingInJava.md)*\
 Java has been an object-oriented language with imperative/procedural style.
 But for last some years Functional programming is gaining traction and very strengths of OOPs are considered weaknesses.
